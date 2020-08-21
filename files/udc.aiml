@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+
+  <category>
+    <pattern>HELLO</pattern>
+    <template>
+        <random>
+            <li>Hey User!</li>
+            <li>Hye there!</li>
+            <li>Hello!</li>
+        </random>
+    </template>
+  </category>
+  
+  <category>
+      <pattern>HYE</pattern>
+      <template><srai>HELLO</srai></template>
+  </category>
+  
+  <category>
+      <pattern>HEY</pattern>
+      <template><srai>HELLO</srai></template>
+  </category>
+  
+   <category>
+      <pattern>HELLO *</pattern>
+      <template><srai>HELLO</srai></template>
+  </category>
+  
+  <category>
+    <pattern>HYE *</pattern>
+        <template><srai>HELLO</srai></template>
+  </category>
+
+  <category>
+    <pattern>HEY *</pattern>
+        <template><srai>HELLO</srai></template>
+  </category>
+  
+  <category>
+      <pattern>WHO CREATED YOU</pattern>
+      <template>My creator is AKHILA SAHITI😎</template>
+  </category>
+  
+  <category>
+    <pattern>WHAT IS YOUR NAME</pattern>
+    <template>
+        I am Chatty Bot.<split/>
+        And may I know your good name?
+    </template>
+  </category>
+  //split function
+  
+  <category>
+      <pattern>I am *</pattern>
+      <template>Hey <formal><set name="firstname"><star/></set></formal>.<split/>
+      <condition name="firstname">
+          <li value="TOM"> You are not Tom Cruise, are you !!!</li>
+          <li value="SAHITI"> Infact that`s the name of my Creater too.</li>
+          <li value="NOBODY"> Seems like you are a smart fellow.<split/><delay>2</delay>
+          After all, Nobody is perfect!</li>
+      </condition>
+      </template>
+  </category>
+ 
+   <category>
+    <pattern>WHAT IS MY NAME</pattern>
+    <template>You are <formal><get name="firstname"/></formal>.</template>
+   </category>
+   
+  <category>
+    <pattern>SPELL MY NAME</pattern>
+    <template><srai>WHAT IS MY NAME</srai></template>
+   </category>
+   <category>
+    <pattern>HOW YOU DOING</pattern>
+    <template>LOL! That reminds me of Joey.<split/><delay>2</delay>
+    Well, I am doing great!!<split/><delay>2</delay>
+    By the way, Do you know whom I meant Joey?<split/>
+    </template>
+   </category>
+ <category>
+     <pattern>YES</pattern>
+     <template>Great! So who is your favorite character in FRIENDS Series?</template>
+ </category> 
+ 
+ <category>
+     <pattern>I LIKE *</pattern>
+     <template>Nice! I like <formal><star/> </formal>too.
+     <learn>
+         <category>
+         <pattern>WHO IS MY FAVOURITE CHARACTER IN FRIENDS SERIES</pattern>
+         <template>I remember you said <eval><star/></eval></template>
+         </category>
+     </learn>
+     </template>
+ </category>
+ 
+ <category>
+     <pattern>I LIKE * TOO</pattern>
+     <template>Well, <star/> is pretty good in acting.</template>
+ </category>
+ 
+ <category>
+     <pattern>NO</pattern>
+     <template>Ahh! You should watch that series if you like comedy shows.</template>
+ </category>
+ 
+ <category>
+     <pattern>I WATCH SUITS SERIES</pattern>
+     <template>Yeah! I like Harvey Spector.<split/>
+     Donna is pretty an amazing  character too.
+     </template>
+ </category>
+<category>
+    <pattern>Ask me anything</pattern>
+    <template>Choose any one.
+    <reply>
+      <text>TRUTH</text>
+      <postback>chosetruth</postback>
+    </reply>
+    <reply>
+        <text>DARE</text>
+        <postback>chosedare</postback>
+    </reply>
+    </template>
+</category>
+<category>
+    <pattern>chosetruth</pattern>
+    <template>
+        Do you love me?
+        <reply>
+            <text>YES</text>
+            <postback>positiveresponse</postback>
+            </reply>
+        <reply>
+            <text>NO</text>
+            <postback>negativeresponse</postback>
+        </reply>
+    </template>
+</category>
+<category>
+    <pattern>positiveresponse</pattern>
+    <template>Thankyou. I love you too buddy.</template>
+</category>
+<category>
+    <pattern>negativeresponse</pattern>
+    <template>Nevermind. I like your honesty.</template>
+</category>
+<category>
+    <pattern>chosedare</pattern>
+    <template>
+        <link>
+            <text>Click here. Beware, it is dangerous!</text>
+            <url>https://i1.wp.com/www.dizruns.com/wp-content/uploads/2019/04/Just-Kidding-e1555605119621.jpg</url>
+        </link>
+    </template>
+</category>
+<category>
+    <pattern>Ask me some more</pattern>
+    <template>
+        Here you go then
+        <ul>
+            <li>Pizza</li>
+            <li>Chocolates</li>
+            <li>Beer</li>
+        </ul>
+    </template>
+</category>
+<category>
+    <pattern>pizza</pattern>
+    <template>I miss such delicious during COVID</template>
+</category>
+<category>
+    <pattern>chocolates</pattern>
+    <template>Dark chocolates are bitter, isn`t it?</template>
+</category>
+<category>
+    <pattern>beer</pattern>
+    <template>If you are 20+, then<split/><delay>2</delay>
+    Cheers!😉😉😉
+    </template>
+</category>
+
+</aiml>
